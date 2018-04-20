@@ -1,0 +1,18 @@
+type Link {
+  id: ID! @unique
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  description: String!
+  url: String!
+  postedBy: User
+}
+
+type User {
+  id: ID! @unique
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  name: String!
+  email: String! @unique
+  password: String!
+  links: [Link!]!
+}
